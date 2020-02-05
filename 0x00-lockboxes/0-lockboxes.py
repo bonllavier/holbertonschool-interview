@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def canUnlockAll(boxes):
     box_status = []
     for item in boxes:

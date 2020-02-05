@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 def canUnlockAll(boxes):
     box_status = []
     for item in boxes:
@@ -7,7 +6,10 @@ def canUnlockAll(boxes):
     for item in range(len(boxes)):
         for item2 in boxes[item]:
             if box_status[item] != 0:
-                box_status[item2] = 1
+                try:
+                    box_status[item2] = 1
+                except:
+                    pass
     new_box_list = []
     while True:
         if new_box_list != box_status:
@@ -15,7 +17,11 @@ def canUnlockAll(boxes):
             for item in range(len(boxes)):
                 for item2 in boxes[item]:
                     if box_status[item] != 0:
-                        box_status[item2] = 1
+                        try:
+                            box_status[item2] = 1
+                        except:
+                            pass
+
         else:
             break
     if 0 in box_status:

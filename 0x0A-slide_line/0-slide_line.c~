@@ -1,0 +1,96 @@
+#include "slide_line.h"
+
+/**
+ * slide_line - 2048 simple game in c
+ *
+ * @line: array of elemetns to be processed
+ * @size: length of elements in the input
+ * @direction: direction
+ *
+ * Return: 1 success, 0 failure
+ */
+
+int slide_line(int *line, size_t size, int direction)
+{
+	size_t counter = 0;
+	size_t counter2 = 0;
+	size_t counter3 = 0;
+	size_t midx = 0;
+	size_t idxin2 = 0;
+	int prev_num = 0;
+	size_t prev_num_pos = 0;
+	size_t inpos = 0;
+	size_t inposf = 0;
+	int conf_inf = 0;
+	if (direction != SLIDE_LEFT && direction != SLIDE_RIGHT)
+		return (0);
+	if (direction == SLIDE_RIGHT) {
+		midx = (size - 1);
+		inpos = (size - 1);
+		idxin2 = (size - 1);
+		inposf = (size - 1);
+	}
+	while (counter < size) {
+		printf("(");
+		while (counter2 < (size)) {
+			printf("-{%zu}", counter2);
+			size_t z = 0;
+			for(z=0;z<size;z++) {
+				printf("%i",line[z]);
+			}
+			if (line[midx] == prev_num && line[midx] != 0 && counter2 != 0) {
+				if (counter2 != (size - 1)){
+					printf("(%zu)",inposf);
+					line[inposf] = prev_num + line[midx];
+					/*line[inpos] = prev_num + line[midx];*/
+					line[midx] = 0;
+					if (counter > 0) {
+						line[prev_num_pos] = 0;
+					}
+					prev_num = line[inpos];
+					prev_num_pos = inpos;
+					printf("/b");
+					if (direction == SLIDE_RIGHT){
+						inposf--;
+					}
+					else {
+						inposf++;
+					}
+					break;
+				}
+                        }
+			if (counter2 == (size - 1) && line[midx] != 0){
+				if (line[inposf] == 0) {
+					line[inposf] = line[midx];
+					line[midx] = 0;
+				}
+				printf("ult");
+                                break;
+                        }
+                        if (line[midx] != 0) {
+                                prev_num = line[midx];
+                                prev_num_pos = midx;
+                        }
+                        if (direction == SLIDE_RIGHT){
+                                midx--;
+                        }
+                        else {
+                                midx++;
+                        }
+			counter2++;
+		}
+		if (direction == SLIDE_RIGHT) {
+			inpos--;
+		}
+		else{
+			inpos++;
+		}
+		counter++;
+		counter2 = counter;
+		midx = inpos;
+		prev_num = 0;
+		prev_num_pos = 0;
+		printf("|%d)\n",prev_num);
+	}
+	return 1;
+}

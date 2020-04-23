@@ -28,8 +28,8 @@ void menger(int level)
 				{
 					charac = ' ';
 				}
-				axisx /= 3;
-				axisy /= 3;
+				axisx = axisx / 3;
+				axisy = axisy / 3;
 			}
 			printf("%c", charac);
 		}

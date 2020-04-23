@@ -1,0 +1,3 @@
+# Menger sponge
+In mathematics, the Menger sponge (also known as the Menger cube, Menger universal curve, Sierpinski cube, or Sierpinski sponge) is a fractal curve. It is a three-dimensional generalization of the one-dimensional Cantor set and two-dimensional Sierpinski carpet. It was first described by Karl Menger in 1926, in his studies of the concept of topological dimension.
+[![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Menger-Schwamm-farbig.png/310px-Menger-Schwamm-farbig.png)](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Menger-Schwamm-farbig.png/310px-Menger-Schwamm-farbig.png)

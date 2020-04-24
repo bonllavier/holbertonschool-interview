@@ -1,0 +1,35 @@
+#include "lists.h"
+
+
+/**
+ * is_palindrome - checks if a singly linked list is a palindrome
+ * @head: pointer to head of the singly linked list
+ *
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome
+ */
+int is_palindrome(listint_t **head)
+{
+	listint_t *idx_main = *head;
+	int array[1000000];
+	int index1 = 0;
+	int index2 = 0;
+
+	if (*head == NULL)
+	{
+		return (1);
+	}
+	while (idx_main != NULL)
+	{
+		array[index1++] = idx_main->n;
+		idx_main = idx_main->next;
+	}
+	while (index2 < index1)
+	{
+		if (array[index2] != array[index1 - 1 - index2])
+		{
+			return (0);
+		}
+		index2++;
+	}
+	return (1);
+}

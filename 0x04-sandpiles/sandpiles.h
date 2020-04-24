@@ -1,0 +1,11 @@
+#ifndef SANDPILES_H
+#define SANDPILES_H
+
+#include <stdio.h>
+#include <stdlib.h>
+void sandpiles_sum(int grid1[3][3], int grid2[3][3]);
+void analyze_table(int grid[3][3]);
+void print_to_output(int grid[3][3]);
+void t_top_sand(int grid[3][3]);
+
+#endif

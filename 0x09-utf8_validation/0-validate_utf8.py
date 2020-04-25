@@ -16,8 +16,6 @@ def validUTF8(data):
                 utf8_valid = False
             if item >= 128 and item < 192:
                 utf8_valid = False
-            if item > 255:
-                utf8_valid = False
         return(utf8_valid)
     except:
         return False
